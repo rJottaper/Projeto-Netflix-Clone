@@ -1,0 +1,68 @@
+.movieRow { 
+    margin-bottom: 30px; /* Para ter um espaçamento entre os filmes */
+}
+
+.movieRow h2 {
+    margin: 0px 0px 0px 30px; /* Para Deixar o espaço no canto esquerdo do Titulo */
+}
+
+.movieRow--listarea {
+    overflow-x: hidden; /* Tudo que passar da tela na horizontal vai ser cortado */
+    padding-left: 30px;
+}
+
+.movieRow--list {
+    transition: all ease 0.5s;
+}
+
+.movieRow--item {
+    display: inline-block; /* Para um item ficar ao lado do outro */
+    width: 150px; /* Cada filme tem 150 de largura */
+    cursor: pointer;
+
+}
+
+.movieRow--item img {
+    width: 100%;
+    transform: scale(0.9); /* Vai ter 100% mas vai ser diminuido para 90%, para ter o espaçamento entre as fotos */
+    transition: all ease 0.3s; /* Para que o efeito dura mais */
+}
+
+.movieRow--item img:hover {
+    transform: scale(1); /* Para ter a animação */
+}
+
+.movieRow--left, .movieRow--right {
+    position: absolute;
+    width: 40px;
+    height: 225px;
+    background-color: transparent;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+    transition: all ease 0.5s;
+}
+
+.movieRow--left {
+    left: 0;
+}
+
+.movieRow--right {
+    right: 0px;
+}
+
+.movieRow:hover .movieRow--left,
+.movieRow:hover .movieRow--right {
+    opacity: 1;
+}
+
+@media (max-width: 760px) {
+    .movieRow--left,
+    .movieRow--right {
+        opacity: 1;
+    }
+}
